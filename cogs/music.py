@@ -3,6 +3,8 @@ from discord.ext import commands
 import yt_dlp
 import asyncio
 import logging
+from discord import FFmpegPCMAudio
+
 
 logger = logging.getLogger('bot')
 

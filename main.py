@@ -5,6 +5,7 @@ from discord.ext import commands
 from dotenv import load_dotenv
 import logging
 from utils.logger import setup_logger
+from discord import FFmpegPCMAudio
 
 # Load environment variables
 load_dotenv()
@@ -12,6 +13,9 @@ TOKEN = os.getenv('DISCORD_TOKEN')
 
 # Setup logging
 logger = setup_logger()
+# Initialize bot with all intents
+intents = discord.Intents.all()  # Enable all intents since we need comprehensive event tracking
+bot = commands.Bot(command_prefix=os.getenv('prefix'), intents=intents)
 
 # Bot configuration
 intents = discord.Intents.default()
