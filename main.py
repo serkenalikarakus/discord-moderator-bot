@@ -17,6 +17,12 @@ logger = setup_logger()
 intents = discord.Intents.all()  # Enable all intents since we need comprehensive event tracking
 bot = commands.Bot(command_prefix=os.getenv('prefix'), intents=intents)
 
+# Get ffmpeg path from .env
+ffmpeg_path = os.getenv("FFMPEG_PATH")
+
+# Manually set ffmpeg path
+#os.environ["PATH"] += os.pathsep + "C:/ffmpeg/bin"
+
 # Bot configuration
 intents = discord.Intents.default()
 intents.members = True
